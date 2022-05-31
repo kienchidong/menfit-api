@@ -49,20 +49,19 @@ class BaseController extends Controller
 
         $user = User::authByToken($token);
 
-        var_dump($user); die();
-        /*if ($user == null) {
+        if ($user == null) {
             if (!in_array(\Yii::$app->controller->action->id, $this->publicActions) && !$this->isPublic) {
                 $this->forceResponse($this->response(false, null, 'Vui lòng đăng nhập', 'Unauthorized', 401), 401);
             }
         } else {
-            try {
+            /*try {
                 if (!$this->roleCheck()) {
                     $this->forceResponse($this->responseMessage(false, 'Bạn không có quyền truy cập tính năng này'), 401);
                 }
             } catch (Exception $exception) {
                 $this->forceResponse($this->response(false, null, 'Vui lòng đăng nhập', 'Unauthorized', 401), 401);
-            }
-        }*/
+            }*/
+        }
 
         try {
             return parent::beforeAction($action);

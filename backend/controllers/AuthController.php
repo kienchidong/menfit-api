@@ -13,7 +13,8 @@ use yii\web\Controller;
  */
 class AuthController extends BaseController
 {
-    //public $isPublic = true;
+    public $isPublic = true;
+    public $publicActions = ['logout'];
     public function actionLogin()
     {
         $this->checkMethod('POST');
